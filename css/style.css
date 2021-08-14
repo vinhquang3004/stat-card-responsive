@@ -1,0 +1,215 @@
+:root {
+  --body-font: "Inter", sans-serif;
+  --body-font-regular: 400;
+  --body-font-bold: 700;
+  --body-font-size: 15px;
+  --header-font: var(--body-font);
+  --header-font-regular: 400;
+  --header-font-bold: 700;
+  --body-font-color: hsla(0, 0%, 100%, 0.57);
+  --header-font-color: hsl(0, 0%, 100%);
+  --stats-font: "Lexend Deca", sans-serif;
+  --stats-font-regular: 400;
+  --stats-font-color: var(--header-font-color);
+  --stats-header-color: hsla(0, 0%, 100%, 0.6);
+  --background-color: hsl(233, 47%, 7%);
+  --card-background-color: hsl(244, 38%, 16%);
+  --accent-color: hsl(277, 64%, 61%);
+  --background-image: url(../images/image-header-desktop.jpg);
+  --mobile-background-image: url(../images/image-header-mobile.jpg);
+}
+
+* {
+  box-sizing: border-box;
+  transition-property: font-size, margin, padding, flex-direction, height;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--body-font);
+  font-weight: var(--body-font-regular);
+  font-size: var(--body-font-size);
+  color: var(--body-font-color);
+  line-height: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+p {
+  max-width: 44ch;
+}
+
+.card {
+  min-height: 446px;
+  max-width: 1080px;
+  width: 82vw;
+  height: 50vh;
+  margin: 25vh auto;
+
+  display: flex;
+  overflow: hidden;
+  position: relative;
+
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+}
+
+.col-left {
+  width: 50%;
+  height: 100%;
+
+  box-sizing: border-box;
+  padding: 4rem 4rem 4rem 4.5rem;
+  /* vertical-align: top; */
+}
+
+.card h1 {
+  font-family: var(--header-font);
+  font-weight: var(--header-font-bold);
+  font-size: 2.2rem;
+  margin: 0;
+  margin-bottom: 0.8em;
+  line-height: 1.185em;
+  color: var(--header-font-color);
+
+}
+
+.card h1 span {
+  /* font-style: normal; */
+  color: var(--accent-color);
+}
+
+.card .stat-block {
+  font-family: var(--stats-font);
+  font-weight: var(--stats-font-regular);
+  display: flex;
+  /* flex-wrap: nowrap; */
+  /* justify-content: flex-start; */
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  /* letter-spacing: 5px; */
+  position: absolute;
+  bottom: 40px;
+}
+
+.card .stats {
+  margin-right: 2rem;
+}
+
+.card .stats strong {
+  color: var(--stats-font-color);
+  display: block;
+  font-family: var(--header-font);
+  font-weight: var(--header-font-bold);
+  text-transform: initial;
+  font-size: 1.4rem;
+}
+
+.col-right {
+  background-color: var(--accent-color);
+  background-image: var(--background-image);
+  background-size: auto 105%;
+  background-blend-mode: multiply;
+  background-position: top right;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+
+
+
+
+@media (max-width: 1260px) {
+  .col-left {
+    padding: 2rem 2rem 2rem 2.5rem;
+  }
+  .col-right {
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+@media (max-width: 1060px) {
+  .card .stats {
+    margin-right: 2em;
+  }
+}
+
+@media (max-width: 830px) {
+  .card {
+    flex-direction: column-reverse;
+    height: initial;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 85vw;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  p {
+    margin: auto;
+  }
+  .col-right {
+    background-position: top center;
+    width: unset;
+    height: 446px;
+  }
+  .col-left {
+    width: unset;
+  }
+
+  .card .stat-block {
+    position: relative;
+    width: 100%;
+    bottom: unset;
+    margin: auto;
+    padding: 2rem 1.5rem;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 550px) {
+  .col-right {
+    background-image: var(--mobile-background-image);
+    height: 233px;
+  }
+}
+
+@media (max-width: 375px) {
+  .card h1 {
+    font-size: 1.7rem;
+    line-height: 2.1rem;
+  }
+
+  .card .stat-block {
+    position: relative;
+    flex-flow: column;
+    width: 100%;
+    bottom: unset;
+  }
+
+  .card .stats {
+    margin: 1.2rem auto;
+  }
+
+  .card .stats strong {
+    font-size: 1.7rem;
+  }
+
+  .col-left {
+    width: unset;
+    height: unset;
+    padding: 1.6rem;
+  }
+}
+
